@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+src/pipeline/__init__.py
+src/pipeline/__main__.py
+src/pipeline/config.py
+src/pipeline/extract.py
+src/pipeline/load.py
+src/pipeline/main.py
+src/pipeline/transform.py
+src/weather_data_pipeline.egg-info/PKG-INFO
+src/weather_data_pipeline.egg-info/SOURCES.txt
+src/weather_data_pipeline.egg-info/dependency_links.txt
+src/weather_data_pipeline.egg-info/requires.txt
+src/weather_data_pipeline.egg-info/top_level.txt
+tests/test_extract.py
+tests/test_transform.py

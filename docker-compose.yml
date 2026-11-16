@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres:16
+    container_name: weather-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME:-weather}
+      POSTGRES_USER: ${DB_USER:-weather_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-change_me}
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - weather_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-weather_user} -d ${DB_NAME:-weather}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+volumes:
+  weather_data:
